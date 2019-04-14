@@ -11,7 +11,7 @@ const QuestionsList = ({ questions, onSearch, onAskQuestion, onChange, searchTit
             </thead>
             <tbody>
                 {
-                    questions.map((question,index) =>(
+                    questions.reverse().map((question,index) =>(
                         <tr key={index}>
                             <td>{question.title}</td>
                             <td>{question.body}</td>
