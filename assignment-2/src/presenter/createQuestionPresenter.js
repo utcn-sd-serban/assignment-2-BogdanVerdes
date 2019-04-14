@@ -1,15 +1,16 @@
 import question from "../model/Questions";
+import user from "../model/Users";
 
 class CreateQuestionPresenter {
 
     onAskQuestion(){
         question.addQuestion(question.state.newQuestion.title,
             question.state.newQuestion.body,
-            question.state.newQuestion.tags,"bogdan");
+            question.state.newQuestion.tags,user.state.currentUser.username);
         question.changeNewQuestionProperty("title","");
         question.changeNewQuestionProperty("body","");
         question.changeNewQuestionProperty("tags","");
-        window.location.assign("#/");
+        window.location.assign("#/questions");
     }
 
     onChange(property,value){

@@ -1,4 +1,5 @@
 import question from "../model/Questions";
+import user from "../model/Users";
 
 class QuestionsListPresenter {
     onAskQuestion(){
@@ -10,6 +11,13 @@ class QuestionsListPresenter {
     onSearch(){
         question.searchQuestion(question.state.newQuestion.title);
         window.location.assign("#/search");
+    }
+    onLogout(){
+        user.state.currentUser.username="";
+        user.state.currentUser.password="";
+        user.state.newUser.username="";
+        user.state.newUser.password="";
+        window.location.assign("#/");
     }
 }
 

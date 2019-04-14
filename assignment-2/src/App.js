@@ -5,12 +5,14 @@ import {HashRouter,Switch,Route} from "react-router-dom";
 import SmartQuestionsList from './view/SmartQuestionsList';
 import SmartCreateQuestion from './view/SmartCreateQuestion';
 import SmartSearchQuestion from './view/SmartSearchQuestion';
+import SmartLogin from './view/SmartLogin';
 
 const App = () => (
       <div className="App">
         <HashRouter>
           <Switch>
-            <Route exact={true} component={SmartQuestionsList} path="/"/>
+            <Route exact={true} component={SmartLogin} path="/"/>
+            <Route exact={true} component={SmartQuestionsList} path="/questions"/>
             <Route exact={true} component={SmartCreateQuestion} path="/ask-question"/>
             <Route exact={true} component={SmartSearchQuestion} path="/search"/>
           </Switch>
