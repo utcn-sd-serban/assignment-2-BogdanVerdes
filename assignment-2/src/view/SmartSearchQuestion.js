@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import question from "../model/Questions";
 import SearchQuestion from "./SearchQuestion";
-import searchQuestionPresenter from "../presenter/searchQuestionPresenter";
+
 
 const mapModelStateToComponentState = modelState => ({
     searchedQuestions: modelState.searchedQuestions

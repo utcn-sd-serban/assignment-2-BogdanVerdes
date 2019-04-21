@@ -6,6 +6,7 @@ import SmartQuestionsList from './view/SmartQuestionsList';
 import SmartCreateQuestion from './view/SmartCreateQuestion';
 import SmartSearchQuestion from './view/SmartSearchQuestion';
 import SmartLogin from './view/SmartLogin';
+import SmartAnswersList from './view/SmartAnswersList';
 
 const App = () => (
       <div className="App">
@@ -15,6 +16,7 @@ const App = () => (
             <Route exact={true} component={SmartQuestionsList} path="/questions"/>
             <Route exact={true} component={SmartCreateQuestion} path="/ask-question"/>
             <Route exact={true} component={SmartSearchQuestion} path="/search"/>
+            <Route exact={true} component={SmartAnswersList} path="/answers/:index"/>
           </Switch>
         </HashRouter>
       </div>

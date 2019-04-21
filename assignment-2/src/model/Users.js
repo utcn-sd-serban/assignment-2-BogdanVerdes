@@ -50,13 +50,36 @@ class User extends EventEmitter{
             this.emit("change",this.state);
     }
 
+    logout(){
+        this.state = {
+            ...this.state,
+            newUser:{
+                ...this.state.newUser,
+                username: "",
+                password: ""
+            },
+            currentUser:{
+                ...this.state.currentUser,
+                username: "",
+                password: ""
+            }
+        }
+        this.emit("change",this.state);
+}
+
     searchUser(username,password){
-            this.state.searchedUser = this.state.users.filter(
-                user => (user.username === username &&
-                user.password === password)
-            )
-            this.state.currentUser = this.state.searchedUser;
-            this.emit("change",this.state);
+        let newUser = user.state.newUser;
+        let users = user.state.users;
+
+        for (let i = 0; i < users.length; i++) {
+            if (newUser.username === users[i].username) {
+                if (newUser.password === users[i].password) {
+                    user.state.currentUser.username = newUser.username;
+                    user.state.currentUser.password = newUser.password;
+                }
+
+            }
+        }
     }
 }
 

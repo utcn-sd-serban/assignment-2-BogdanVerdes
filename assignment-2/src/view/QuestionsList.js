@@ -1,6 +1,6 @@
 import React from "react";
 
-const QuestionsList = ({ questions, onSearch, onAskQuestion, onChange, searchTitle, username , onLogout}) => (
+const QuestionsList = ({ questions, onSearch, onAskQuestion, onListAnswers, onChange, searchTitle, }) => (
     <div>
         <h2>Questions</h2>
         <table>
@@ -18,6 +18,7 @@ const QuestionsList = ({ questions, onSearch, onAskQuestion, onChange, searchTit
                             <td>{question.tags}</td>
                             <td>{question.author}</td>
                             <td>{question.score}</td>
+                            <td><button onClick={() => onListAnswers(index)}>See answers</button></td>
                         </tr>
                     ))
                 }
@@ -25,8 +26,7 @@ const QuestionsList = ({ questions, onSearch, onAskQuestion, onChange, searchTit
         </table>
         <button onClick={onAskQuestion}>Ask Question</button>
         <br/>
-        <label username={username}>Logged in as {username}</label>
-        <button onClick={onLogout}>Logout</button>
+        
     </div>
 );
 
